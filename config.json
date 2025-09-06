@@ -1,0 +1,14 @@
+{
+    "development": {
+        "API_BASE_URL": "https://dev.api.com",
+        "ENABLE_LOGGING": "true"
+    },
+    "staging": {
+        "API_BASE_URL": "https://staging.api.com",
+        "ENABLE_LOGGING": "true"
+    },
+    "production": {
+        "API_BASE_URL": "https://api.com",
+        "ENABLE_LOGGING": "false"
+    }
+}
