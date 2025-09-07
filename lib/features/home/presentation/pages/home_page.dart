@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todolist/features/app/presentation/bloc/settings/settings_bloc.dart';
+import 'package:todolist/features/app/presentation/bloc/app/app_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final settingBloc = Modular.get<SettingsBloc>();
+  final settingBloc = Modular.get<AppBloc>();
 
   @override
   Widget build(BuildContext context) {

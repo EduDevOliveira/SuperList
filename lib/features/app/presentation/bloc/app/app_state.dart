@@ -1,14 +1,31 @@
 part of 'app_bloc.dart';
 
-class AppState extends Equatable {
-  const AppState();
-
-  @override
-  List<Object> get props => [];
+enum AppStatus {
+  initial,
+  logged,
+  nlogged,
+  error,
 }
 
-class AppInitial extends AppState {}
+class AppState extends Equatable {
+  final AppStatus status;
+  final ThemeMode themeMode;
 
-class AppLogged extends AppState {}
+  const AppState({
+    this.status = AppStatus.initial,
+    this.themeMode = ThemeMode.dark,
+  });
 
-class AppNotLogged extends AppState {}
+  AppState copyWith({
+    AppStatus? status,
+    ThemeMode? themeMode,
+  }) {
+    return AppState(
+      status: status ?? this.status,
+      themeMode: themeMode ?? this.themeMode,
+    );
+  }
+
+  @override
+  List<Object> get props => [status, themeMode];
+}
