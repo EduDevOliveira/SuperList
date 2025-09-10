@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "br.com.eduprog.todolist"
+    namespace = "br.com.eduprog.supertodolist"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "br.com.eduprog.todolist"
+        applicationId = "br.com.eduprog.supertodolist"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

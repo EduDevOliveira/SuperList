@@ -1,4 +1,12 @@
-enum Flavor { development, production }
+enum Flavor {
+  development(name: 'development'),
+  staging(name: 'staging'),
+  production(name: 'production');
+
+  final String name;
+
+  const Flavor({required this.name});
+}
 
 class Config {
   // Flavor atual do app
@@ -36,6 +44,15 @@ class Config {
         break;
 
       case Flavor.production:
+        _instance = Config._internal(
+          flavor: flavor,
+          apiBaseUrl: 'https://api.com',
+          enableCrashlytics: true,
+          enableAnalytics: true,
+        );
+        break;
+
+      case Flavor.staging:
         _instance = Config._internal(
           flavor: flavor,
           apiBaseUrl: 'https://api.com',

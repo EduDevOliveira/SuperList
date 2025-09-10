@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-class UserModel extends Equatable {
+class UserEntity extends Equatable {
   final String name;
   final String username;
 
-  const UserModel({
+  const UserEntity({
     required this.name,
     required this.username,
   });

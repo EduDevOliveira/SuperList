@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todolist/features/app/presentation/bloc/app/app_bloc.dart';
+import 'package:supertodolist/features/app/presentation/bloc/app_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

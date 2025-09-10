@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todolist/core/initialization/services/flavor_service.dart';
-import 'package:todolist/core/initialization/services/firebase_sevice.dart';
-import 'package:todolist/core/initialization/services/logger_service.dart';
-import 'package:todolist/core/initialization/services/shared_preferences_service.dart';
+import 'package:supertodolist/core/initialization/services/flavor_service.dart';
+import 'package:supertodolist/core/initialization/implements/firebase_sevice.dart';
+import 'package:supertodolist/core/initialization/services/logger_service.dart';
+import 'package:supertodolist/core/initialization/implements/shared_preferences_service.dart';
 
 class Bootstrap {
   static Future<void> init() async {

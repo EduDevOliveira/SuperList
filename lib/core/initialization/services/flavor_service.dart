@@ -1,5 +1,5 @@
-import 'package:todolist/core/config/config.dart';
-import 'package:todolist/core/initialization/services/logger_service.dart';
+import 'package:supertodolist/core/config/config.dart';
+import 'package:supertodolist/core/initialization/services/logger_service.dart';
 
 class FlavorService {
   static Future<void> setupFlavor() async {
@@ -8,9 +8,11 @@ class FlavorService {
       defaultValue: 'development',
     );
 
-    final flavor = flavorString.toLowerCase() == 'development'
-        ? Flavor.development
-        : Flavor.production;
+    final flavor = Flavor.values
+        .where(
+          (element) => element.name == flavorString.toLowerCase(),
+        )
+        .first;
     Config.setup(flavor);
 
     LoggerService.log("Aplicativo iniciado com flavor: $flavorString");

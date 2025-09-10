@@ -8,7 +8,7 @@
             "program": "lib/main.dart",
             "flutterMode": "debug",
             "args": [
-                "--dart-define-from-file=config.json",
+                "--dart-define-from-file=config-dev.json",
                 "--flavor",
                 "development"
             ]
@@ -20,7 +20,7 @@
             "program": "lib/main.dart",
             "flutterMode": "debug",
             "args": [
-                "--dart-define-from-file=config.json",
+                "--dart-define-from-file=config-staging.json",
                 "--flavor",
                 "staging"
             ]
@@ -32,7 +32,7 @@
             "program": "lib/main.dart",
             "flutterMode": "debug",
             "args": [
-                "--dart-define-from-file=config.json",
+                "--dart-define-from-file=config-prod.json",
                 "--flavor",
                 "production"
             ]

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:todolist/features/app/presentation/bloc/app/app_bloc.dart';
+import 'package:supertodolist/features/app/presentation/bloc/app_bloc.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
@@ -20,7 +20,7 @@ class _AppWidgetState extends State<AppWidget> {
       listener: (context, appState) {},
       builder: (context, appState) {
         return MaterialApp.router(
-          title: 'TodoList',
+          title: 'Supertodolist',
           theme: ThemeData(
             brightness: Brightness.light,
           ),

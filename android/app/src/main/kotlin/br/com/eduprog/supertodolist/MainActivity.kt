@@ -1,4 +1,4 @@
-package br.com.eduprog.todolist
+package br.com.eduprog.supertodolist
 
 import io.flutter.embedding.android.FlutterActivity
 

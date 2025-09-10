@@ -46,3 +46,6 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+config-dev.json
+config-staging.json
+config-prod.json

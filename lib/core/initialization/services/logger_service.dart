@@ -1,11 +1,13 @@
 import 'dart:developer' as dev;
-import 'package:todolist/core/config/config.dart';
+import 'package:supertodolist/core/config/config.dart';
 
 enum LogLevel { debug, info, warning, error }
 
 class LoggerService {
   // Define se os logs estão habilitados (somente em development)
-  static bool get isEnabled => Config.instance.flavor == Flavor.development;
+  static bool get isEnabled =>
+      Config.instance.flavor == Flavor.development ||
+      Config.instance.flavor == Flavor.staging;
 
   /// Inicializa o logger (pode configurar destinos como arquivos, Firebase, etc.)
   static void init() {
