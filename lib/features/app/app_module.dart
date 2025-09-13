@@ -9,7 +9,7 @@ import 'package:supertodolist/core/initialization/interfaces/i_http_client.dart'
 import 'package:supertodolist/core/initialization/interfaces/i_secure_storage.dart';
 import 'package:supertodolist/core/initialization/interfaces/i_storage.dart';
 import 'package:supertodolist/features/app/presentation/bloc/app_bloc.dart';
-import 'package:supertodolist/features/home/home_module.dart';
+import 'package:supertodolist/features/dashboard/dashboard_module.dart';
 
 class AppModule extends Module {
   @override
@@ -24,6 +24,6 @@ class AppModule extends Module {
 
   @override
   void routes(r) {
-    r.module(Modular.initialRoute, module: HomeModule());
+    r.module(Modular.initialRoute, module: DashboardModule());
   }
 }

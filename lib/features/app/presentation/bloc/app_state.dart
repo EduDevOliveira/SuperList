@@ -13,7 +13,7 @@ class AppState extends Equatable {
 
   const AppState({
     this.status = AppStatus.initial,
-    this.themeMode = ThemeMode.dark,
+    this.themeMode = ThemeMode.light,
   });
 
   AppState copyWith({

@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supertodolist/bootstrap.dart';
 import 'package:supertodolist/features/app/app_module.dart';
 import 'package:supertodolist/features/app/presentation/app_widget.dart';
+import 'package:supertodolist/features/home/presentation/pages/home_page.dart';
 
 void main() {
-  testWidgets('alternar tema ao clicar no botão', (tester) async {
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    await Bootstrap.init();
+  });
+
+  tearDown(() {
+    Modular.destroy();
+  });
+  testWidgets('Increment Counter on HomePage', (tester) async {
+    await Bootstrap.init();
+
     // Monta o app inteiro com Modular
     await tester.pumpWidget(
       ModularApp(
@@ -15,29 +28,39 @@ void main() {
     );
 
     // Espera modular/carregamentos iniciais
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(const Duration(milliseconds: 500));
 
     // Garante que a HomePage abriu (AppBar com título Home)
-    expect(find.widgetWithText(AppBar, 'Home'), findsOneWidget);
+    expect(find.byType(HomePage), findsOneWidget);
+    expect(find.text('0'), findsOneWidget);
 
-    // Pega o MaterialApp atual
-    MaterialApp app = tester.widget(find.byType(MaterialApp));
-    expect(app.themeMode, ThemeMode.dark);
+    await tester.tap(find.text('+'));
+    await tester.pump();
 
-    // Toca no botão "Trocar"
-    await tester.tap(find.text('Trocar'));
-    await tester.pumpAndSettle();
+    expect(find.text('1'), findsOneWidget);
+  });
 
-    // Verifica se mudou para dark
-    app = tester.widget(find.byType(MaterialApp));
-    expect(app.themeMode, ThemeMode.light);
+  testWidgets('Increment Counter on HomePage', (tester) async {
+    await Bootstrap.init();
 
-    // Toca de novo
-    await tester.tap(find.text('Trocar'));
-    await tester.pumpAndSettle();
+    // Monta o app inteiro com Modular
+    await tester.pumpWidget(
+      ModularApp(
+        module: AppModule(),
+        child: AppWidget(),
+      ),
+    );
 
-    // Verifica se mudou para light
-    app = tester.widget(find.byType(MaterialApp));
-    expect(app.themeMode, ThemeMode.dark);
+    // Espera modular/carregamentos iniciais
+    await tester.pumpAndSettle(const Duration(milliseconds: 500));
+
+    // Garante que a HomePage abriu (AppBar com título Home)
+    expect(find.byType(HomePage), findsOneWidget);
+    expect(find.text('0'), findsOneWidget);
+
+    await tester.tap(find.text('+'));
+    await tester.pump();
+
+    expect(find.text('1'), findsOneWidget);
   });
 }

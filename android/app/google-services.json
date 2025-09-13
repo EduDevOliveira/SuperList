@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "509713793528",
+    "project_id": "super-todolist-e3984",
+    "storage_bucket": "super-todolist-e3984.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509713793528:android:4782414d732a4f1c28160d",
+        "android_client_info": {
+          "package_name": "br.com.eduprog.supertodolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFdp2jTNDkB1bcBjwVqZzkIKT9RagOV78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
