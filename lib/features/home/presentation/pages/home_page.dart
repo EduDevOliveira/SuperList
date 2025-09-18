@@ -15,48 +15,47 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
       ),
-      body: BlocBuilder<HomeBloc, HomeState>(
-        bloc: bloc,
-        builder: (context, state) {
-          return SingleChildScrollView(
-            child: SizedBox(
-              width: double.maxFinite,
-              height: MediaQuery.sizeOf(context).height - 218,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    key: Key('count'),
-                    state.value.toString(),
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          ColorTile("Primary", colors.primary, colors.onPrimary),
+          ColorTile("Secondary", colors.secondary, colors.onSecondary),
+          ColorTile("Tertiary", colors.tertiary, colors.onTertiary),
+          ColorTile("Error", colors.error, colors.onError),
+          ColorTile("Surface", colors.surface, colors.onSurface),
+          ColorTile("SurfaceContainer", colors.surfaceContainer, colors.onSurface),
+          ColorTile("Outline", colors.outline, colors.onSurface),
+        ],
+      ),
+    );
+  }
+}
 
-                  IconButton(
-                    icon: Icon(Icons.add),
-                    onPressed: () {
-                      bloc.add(HomeEventIncrement());
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.remove),
-                    onPressed: () {
-                      bloc.add(HomeEventDecrement());
-                    },
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
+class ColorTile extends StatelessWidget {
+  final String label;
+  final Color color;
+  final Color textColor;
+
+  const ColorTile(this.label, this.color, this.textColor, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.black12),
       ),
+      child: Text(label, style: TextStyle(color: textColor, fontSize: 18)),
     );
   }
 }
