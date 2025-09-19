@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:supertodolist/core/themes/app_theme.dart';
 import 'package:supertodolist/features/app/presentation/bloc/app_bloc.dart';
 
 class AppWidget extends StatefulWidget {
@@ -21,13 +22,9 @@ class _AppWidgetState extends State<AppWidget> {
       builder: (context, appState) {
         return MaterialApp.router(
           title: 'Supertodolist',
-          theme: ThemeData(
-            brightness: Brightness.light,
-          ),
-          darkTheme: ThemeData(
-            brightness: Brightness.dark,
-          ),
-          themeMode: appState.themeMode,
+          theme: AppTheme.light,
+          darkTheme: AppTheme.dark,
+          themeMode: ThemeMode.light,
           routerConfig: Modular.routerConfig,
         );
       },
