@@ -31,13 +31,6 @@ class _DashBottomNavigationBarWidgetState extends State<DashBottomNavigationBarW
       ),
       child: BottomNavigationBar(
         onTap: _onItemTapped,
-        backgroundColor: Colors.blue,
-        showSelectedLabels: false,
-        selectedItemColor: Colors.white,
-        selectedIconTheme: IconThemeData(
-          size: 30,
-        ),
-        unselectedItemColor: Colors.black,
         currentIndex: _selectedIndex,
         items: [
           BottomNavigationBarItem(

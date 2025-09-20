@@ -1,16 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:supertodolist/core/themes/app_color.dart';
 
-// const seedColor = Colors.red;
-// const seedColor = Color(0xFFD32F2F); // vermelho intenso
-// const seedColor = Color(0xFFB71C1C); // vermelho sangue escuro
-const seedColor = Color.fromARGB(255, 23, 92, 184);
-
-final lightColorScheme = ColorScheme.fromSeed(
-  seedColor: seedColor,
+final lightColorScheme = ColorScheme.highContrastLight(
   brightness: Brightness.light,
+  primary: AppColor.primaryColor,
+  onPrimary: AppColor.onPrimaryColor,
+  secondary: AppColor.secondaryColor,
+  onSecondary: AppColor.onSecondaryColor,
+  tertiary: AppColor.tertiaryColor,
+  onTertiary: AppColor.onTertiaryColor,
+  surface: AppColor.surfaceColor,
+  onSurface: AppColor.onSurfaceColor,
+  surfaceContainer: AppColor.onSurfaceContainerColor,
+  outline: AppColor.outlineColor,
+  error: AppColor.erroColor,
+  onError: AppColor.onErroColor,
 );
 
-final darkColorScheme = ColorScheme.fromSeed(
-  seedColor: seedColor,
+final darkColorScheme = ColorScheme.highContrastDark(
   brightness: Brightness.dark,
+  primary: AppColor.primaryColor,
+  onPrimary: AppColor.onPrimaryColor,
+  secondary: AppColor.secondaryColor,
+  onSecondary: AppColor.onSecondaryColor,
+  tertiary: AppColor.tertiaryColor,
+  onTertiary: AppColor.onTertiaryColor,
+  surface: AppColor.surfaceDarkColor,
+  onSurface: AppColor.onSurfaceDarkColor,
+  surfaceContainer: AppColor.onSurfaceContainerDarkColor,
+  outline: AppColor.outlineColor,
+  error: AppColor.erroColor,
+  onError: AppColor.onErroColor,
 );

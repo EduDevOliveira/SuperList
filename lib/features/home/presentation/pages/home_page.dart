@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:supertodolist/features/home/presentation/bloc/home_bloc.dart';
 
@@ -32,6 +31,44 @@ class _HomePageState extends State<HomePage> {
           ColorTile("Surface", colors.surface, colors.onSurface),
           ColorTile("SurfaceContainer", colors.surfaceContainer, colors.onSurface),
           ColorTile("Outline", colors.outline, colors.onSurface),
+          TextFormField(
+            decoration: InputDecoration(
+              // hint: Text('Email'),
+              label: Text('Email'),
+            ),
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text('OutlinedButton'),
+          ),
+          IconButton.filled(
+            onPressed: () {},
+            icon: Icon(
+              Icons.home,
+            ),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text('TextButton'),
+          ),
+          FilledButton(
+            onPressed: () {},
+            child: Text('FilledButton'),
+          ),
+          FilledButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.abc),
+            label: Text('FilledButton'),
+          ),
+          FilledButton.tonal(
+            onPressed: () {},
+            child: Text('FilledButton tonal'),
+          ),
+          FilledButton.tonalIcon(
+            onPressed: () {},
+            icon: Icon(Icons.abc),
+            label: Text('FilledButton'),
+          ),
         ],
       ),
     );
