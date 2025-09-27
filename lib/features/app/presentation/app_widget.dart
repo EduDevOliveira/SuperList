@@ -24,7 +24,7 @@ class _AppWidgetState extends State<AppWidget> {
           title: 'Supertodolist',
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
-          themeMode: ThemeMode.light,
+          themeMode: ThemeMode.dark,
           routerConfig: Modular.routerConfig,
         );
       },
