@@ -8,8 +8,12 @@ class AppTheme {
     useMaterial3: true,
     colorScheme: lightColorScheme,
     textTheme: const TextTheme(
-      titleLarge: AppTextStyles.title,
-      bodyMedium: AppTextStyles.body,
+      bodySmall: AppTextStyles.bodySmall,
+      bodyMedium: AppTextStyles.bodyMedium,
+      bodyLarge: AppTextStyles.bodyLarge,
+      titleSmall: AppTextStyles.titleSmall,
+      titleMedium: AppTextStyles.titleMedium,
+      titleLarge: AppTextStyles.titleLarge,
     ),
     inputDecorationTheme: inputDecoration,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -25,8 +29,12 @@ class AppTheme {
     useMaterial3: true,
     colorScheme: darkColorScheme,
     textTheme: const TextTheme(
-      titleLarge: AppTextStyles.title,
-      bodyMedium: AppTextStyles.body,
+      bodySmall: AppTextStyles.bodySmall,
+      bodyMedium: AppTextStyles.bodyMedium,
+      bodyLarge: AppTextStyles.bodyLarge,
+      titleSmall: AppTextStyles.titleSmall,
+      titleMedium: AppTextStyles.titleMedium,
+      titleLarge: AppTextStyles.titleLarge,
     ),
     inputDecorationTheme: inputDarkDecoration,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

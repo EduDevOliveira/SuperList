@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:supertodolist/core/extensions/date_time_formatted_extensions.dart';
+import 'package:supertodolist/core/extensions/date_time_week_day_extensions.dart';
 import 'package:supertodolist/core/extensions/size_extensions.dart';
 import 'package:supertodolist/core/extensions/theme_extensions.dart';
+import 'package:supertodolist/core/themes/app_image.dart';
+import 'package:intl/intl.dart';
 
 class HomeAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBarWidget({super.key});
@@ -11,43 +15,52 @@ class HomeAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       width: context.screenWidth,
       height: context.percentHeight(100),
       child: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Sab, 20 de Set',
-                    style: context.textScheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    'Olá, Eduardo',
-                    style: context.textScheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+        child: Container(
+          padding: const EdgeInsets.only(bottom: 12),
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: context.colorScheme.outline,
+                width: 2,
               ),
             ),
-            Expanded(
-              child: Container(
-                child: Image(
-                  image: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2015/12/08/18/19/clock-1083479_960_720.png',
-                  ),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 10,
+            children: [
+              SizedBox(width: 30),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.formattedDate,
+                      style: context.textScheme.titleSmall,
+                    ),
+                    Text(
+                      toBeginningOfSentenceCase(context.weekDay)!,
+                      style: context.textScheme.titleSmall,
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Image(
+                  image: const AssetImage(AppImage.sunCloud),
+                  height: context.percentHeight(20),
+                  width: context.percentWidth(20),
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size(double.maxFinite, 110);
+  Size get preferredSize => Size(double.maxFinite, 120);
 }
