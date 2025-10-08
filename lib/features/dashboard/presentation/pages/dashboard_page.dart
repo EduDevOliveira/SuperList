@@ -20,6 +20,14 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: RouterOutlet(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
       bottomNavigationBar: DashBottomNavigationBarWidget(),
     );
   }

@@ -75,6 +75,9 @@ flutter:
     - assets/images/
 
   fonts:
+    - family: SuperListApp
+      fonts:
+        - asset: assets/fonts/icons/SuperListApp.ttf
     - family: Jost
       fonts:
         - asset: assets/fonts/Jost-Regular.ttf
